@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import GlobalStyles from './shared/globalStyles'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -15,6 +16,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <GlobalStyles />
         <header></header>
         <main>{children}</main>
         <footer></footer>
