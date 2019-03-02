@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from "gatsby"
 import GlobalStyles from './shared/globalStyles'
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+    <StaticQuery
+        query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -14,19 +14,19 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+        render={data => (
       <>
         <GlobalStyles />
         <header></header>
         <main>{children}</main>
         <footer></footer>
       </>
-    )}
-  />
+        )}
+    />
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout

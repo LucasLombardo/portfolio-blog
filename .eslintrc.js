@@ -5,7 +5,7 @@ module.exports = {
       "no-var": "error",
       "no-unused-vars": 1,
       "arrow-spacing": ["error", { before: true, after: true }],
-      indent: ["error", 2],
+      indent: ["error", 4],
       "comma-dangle": [
         "error",
         {
