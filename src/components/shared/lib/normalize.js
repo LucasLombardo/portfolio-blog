@@ -1,6 +1,7 @@
-// normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// Normalize.css v8.0.1, github.com/necolas/normalize.css
+// Adds baseline css rules for browser consisistency.
 
-const normalizeCss = `
+export const normalize = `
     button,
     hr,
     input {
@@ -141,5 +142,3 @@ const normalizeCss = `
     display: none;
     }
 `
-
-export default normalizeCss
