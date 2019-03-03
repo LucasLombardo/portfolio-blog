@@ -7,6 +7,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.1.19",
+    "gatsby-background-image": "^0.2.4",
     "gatsby-cli": "^2.4.12",
     "gatsby-image": "^2.0.30",
     "gatsby-plugin-manifest": "^2.0.20",
@@ -45,7 +46,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "lint:css":"stylelint './src/**/*.js'"
+    "lint:css": "stylelint './src/**/*.js'"
   },
   "repository": {
     "type": "git",
