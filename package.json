@@ -30,7 +30,11 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.2"
   },
   "keywords": [
     "gatsby"
@@ -39,10 +43,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "lint:css":"stylelint './src/**/*.js'"
   },
   "repository": {
     "type": "git",
