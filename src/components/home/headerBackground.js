@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { useSpring, animated } from "react-spring"
@@ -30,15 +30,8 @@ const Background = styled(BackgroundImage)`
 `
 
 const HeaderBackground = ({ children }) => {
-    const fadeBackgroundIn = useSpring({
-        to: { backgroundColor: `rgba(80, 80, 80, 0.1)` },
-        from: { backgroundColor: `rgba(80, 80, 80, 1)` },
-        config: { duration: `1000` },
-        delay: `500`
-    })
-
-    return (
-        <StaticQuery query={graphql`
+    // get image data for background
+    const data = useStaticQuery(graphql`
         query {
             desktop: file(relativePath: { eq: "zion.jpg" }) {
                 childImageSharp {
@@ -48,21 +41,24 @@ const HeaderBackground = ({ children }) => {
                 }
             }
         }
-        `}
-        render={data => {
-            const imageData = data.desktop.childImageSharp.fluid
-            return (
-                <Background Tag="div"
-                    fluid={imageData}
-                >
-                    <animated.div className="overlay" style={fadeBackgroundIn}>
-                        {children}
-                    </animated.div>
-                </Background>
-            )
-        }
-        }
-        />
+    `)
+
+    // define react spring animation
+    const fadeBackgroundIn = useSpring({
+        to: { backgroundColor: `rgba(80, 80, 80, 0.1)` },
+        from: { backgroundColor: `rgba(80, 80, 80, 1)` },
+        config: { duration: `1000` },
+        delay: `500`
+    })
+
+    return (
+        <Background Tag="div"
+            fluid={data.desktop.childImageSharp.fluid}
+        >
+            <animated.div className="overlay" style={fadeBackgroundIn}>
+                {children}
+            </animated.div>
+        </Background>
     )
 }
 
