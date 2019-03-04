@@ -48,7 +48,14 @@ const Chevron = styled.a`
 const Header = () => {
     const scaleIn = useSpring({
         to: { transform: `scaleY(1)` },
-        from: { transform: `scaleY(1.1)` },
+        from: { transform: `scaleY(1.2)` },
+        delay: `100`,
+    })
+
+    const fadeIn = useSpring({
+        to: { opacity: 1 },
+        from: { opacity: 0 },
+        config: { duration: 700 },
         delay: `100`,
     })
 
@@ -57,8 +64,8 @@ const Header = () => {
             <HeaderBackground>
                 <animated.div style={scaleIn}>
                     <Content>
-                        <h1>Lucas Lombardo</h1>
-                        <p className="fade-in">Boston based web developer</p>
+                        <animated.h1 style={fadeIn} >Lucas Lombardo</animated.h1>
+                        <animated.p style={fadeIn} >Boston based web developer</animated.p>
                     </Content>
                 </animated.div>
                 <Chevron>
