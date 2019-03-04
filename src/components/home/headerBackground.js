@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
+import { useSpring, animated } from "react-spring"
 
 const Background = styled(BackgroundImage)`
     height: 100vh;
@@ -25,52 +26,45 @@ const Background = styled(BackgroundImage)`
             rgba(0, 0, 0, 0) 50%,
             rgba(0, 0, 0, 0.625)
         );
-        background-color: rgba(80, 80, 80, 1);
-
-        /* fade overlay opacity out on load to give time for image loading */
-        animation-name: fade-out;
-        animation-delay: 0.7s;
-        animation-duration: 1s;
-        animation-timing-function: ease-in;
-        animation-fill-mode: forwards;
-        @keyframes fade-out {
-            0% {
-                background-color: rgba(80, 80, 80, 1);
-            }
-            100% {
-                background-color: rgba(80, 80, 80, 0.1);
-            }
-        }
     }
 `
 
-const HeaderBackground = ({ children }) => (
-    <StaticQuery query={graphql`
-      query {
-        desktop: file(relativePath: { eq: "zion.jpg" }) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid_withWebp
+const HeaderBackground = ({ children }) => {
+    const fadeBackgroundIn = useSpring({
+        to: { backgroundColor: `rgba(80, 80, 80, 0.1)` },
+        from: { backgroundColor: `rgba(80, 80, 80, 1)` },
+        config: { duration: `1000` },
+        delay: `500`
+    })
+
+    return (
+        <StaticQuery query={graphql`
+        query {
+            desktop: file(relativePath: { eq: "zion.jpg" }) {
+                childImageSharp {
+                    fluid(quality: 100, maxWidth: 4160) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
             }
-          }
         }
-      }
-    `}
-    render={data => {
-        const imageData = data.desktop.childImageSharp.fluid
-        return (
-            <Background Tag="div"
-                fluid={imageData}
-            >
-                <div className="overlay">
-                    {children}
-                </div>
-            </Background>
-        )
-    }
-    }
-    />
-)
+        `}
+        render={data => {
+            const imageData = data.desktop.childImageSharp.fluid
+            return (
+                <Background Tag="div"
+                    fluid={imageData}
+                >
+                    <animated.div className="overlay" style={fadeBackgroundIn}>
+                        {children}
+                    </animated.div>
+                </Background>
+            )
+        }
+        }
+        />
+    )
+}
 
 HeaderBackground.propTypes = {
     children: PropTypes.node.isRequired,
