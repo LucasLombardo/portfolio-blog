@@ -2,11 +2,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
 import { useSpring, animated } from "react-spring"
+import Img from "gatsby-image"
 
-const Background = styled(BackgroundImage)`
+const Background = styled.div`
     height: 100vh;
+
+    .bg-image {
+        object-fit: cover;
+        width: 100%;
+        /* override default gatsby image fluid position */
+        position: fixed !important; /* stylelint-disable-line */
+        z-index: -1;
+        min-height: 100%;
+    }
 
     .overlay {
         position: absolute;
@@ -33,10 +42,10 @@ const HeaderBackground = ({ children }) => {
     // get image data for background
     const data = useStaticQuery(graphql`
         query {
-            desktop: file(relativePath: { eq: "zion.jpg" }) {
-                childImageSharp {
-                    fluid(quality: 100, maxWidth: 4160) {
-                        ...GatsbyImageSharpFluid_withWebp
+            placeholderImage: file(relativePath: { eq: "zion.jpg" }) {
+                    childImageSharp {
+                        fluid(maxWidth: 1280) {
+                            ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
@@ -52,9 +61,8 @@ const HeaderBackground = ({ children }) => {
     })
 
     return (
-        <Background Tag="div"
-            fluid={data.desktop.childImageSharp.fluid}
-        >
+        <Background>
+            <Img className="bg-image" fluid={data.placeholderImage.childImageSharp.fluid} />
             <animated.div className="overlay" style={fadeBackgroundIn}>
                 {children}
             </animated.div>
