@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { colors } from "../styles/lib"
+import NavItems from "./navItems"
 
 const NavWrapper = styled.nav`
     position: absolute;
@@ -37,7 +38,7 @@ const Nav = ({ refs }) => {
 
     return (
         <NavWrapper className={sticky ? `sticky` : ``}>
-            <h2>{activeSection}</h2>
+            <NavItems activeSection={activeSection} isSticky={sticky} />
         </NavWrapper>
     )
 }
