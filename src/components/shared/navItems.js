@@ -73,32 +73,27 @@ const ItemsWrapper = styled.div`
             .hamburger.toggle {
                 position: fixed;
             }
-            ul {
-                display: block;
+            .sidebar {
+                transition: 0.5s;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0,0,0,0.3);
                 position: fixed;
+            }
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                position: fixed;
+                box-sizing: border-box;
                 text-align: center;
                 top: 0;
                 right: 0;
                 height: 100vh;
                 background ${ colors.teal };
-                padding: 4em 4em 2em 4em;
+                padding: 3em 4em;
                 transform: translateX(100%);
                 animation: slideIn 0.2s forwards;
-                li {
-                    margin: 1em 0;
-                }
-                &:before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    bottom: 0;
-                    background rgba(0,0,0,0.3);
-                    left: 0;
-                    z-index: -1;
-                    height: 100%;
-                    width: 100vw;
-                    margin-left: -100vw;
-                }
 
                 @keyframes slideIn {
                     0% {
@@ -119,21 +114,23 @@ const NavItems = ({ activeSection, isSticky }) => {
     return (
         <ItemsWrapper className={open ? `open` : `closed`}>
             <a>Lucas Lombardo</a>
-            <button onClick={() => setOpen(!open)} className="hamburger toggle">X</button>
-            <ul onClick={() => console.log(`click`)}>
-                <li className={activeSection === `about` ? `active` : ``}>
-                    <a>About</a>
-                </li>
-                <li className={activeSection === `work` ? `active` : ``}>
-                    <a>Work</a>
-                </li>
-                <li>
-                    <a>Blog</a>
-                </li>
-                <li className={activeSection === `contact` ? `active` : ``}>
-                    <a>Contact</a>
-                </li>
-            </ul>
+            <div className="sidebar" onClick={() => console.log(`click`)} >
+                <button onClick={() => setOpen(!open)} className="hamburger toggle">X</button>
+                <ul>
+                    <li className={activeSection === `about` ? `active` : ``}>
+                        <a>About</a>
+                    </li>
+                    <li className={activeSection === `work` ? `active` : ``}>
+                        <a>Work</a>
+                    </li>
+                    <li>
+                        <a>Blog</a>
+                    </li>
+                    <li className={activeSection === `contact` ? `active` : ``}>
+                        <a>Contact</a>
+                    </li>
+                </ul>
+            </div>
         </ItemsWrapper>
     )
 }
