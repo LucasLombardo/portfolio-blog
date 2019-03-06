@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { below, colors } from "../styles/lib"
 // import PropTypes from "prop-types"
 
 const ItemsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     color: #fff;
-    padding: 0.5em 0;
+    /* padding: 0.5em 0; */
+    /* margin: 0; */
     a {
         margin: 0 1em;
         line-height: 2em;
@@ -52,26 +54,88 @@ const ItemsWrapper = styled.div`
             }
         }
     }
+    .hamburger.toggle {
+        display: none;
+    }
+
+    ${ below.sm`
+        .hamburger.toggle {
+            display: block;
+            z-index: 5;
+            top: 0;
+            right: 0;
+            margin: 1em;
+        }
+        ul {
+            display: none
+        }
+        &.open {
+            .hamburger.toggle {
+                position: fixed;
+            }
+            ul {
+                display: block;
+                position: fixed;
+                text-align: center;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                background ${ colors.teal };
+                padding: 4em 4em 2em 4em;
+                transform: translateX(100%);
+                animation: slideIn 0.2s forwards;
+                li {
+                    margin: 1em 0;
+                }
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    background rgba(0,0,0,0.3);
+                    left: 0;
+                    z-index: -1;
+                    height: 100%;
+                    width: 100vw;
+                    margin-left: -100vw;
+                }
+
+                @keyframes slideIn {
+                    0% {
+                        transform: translateX(100%);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+    ` }
 `
 
-const NavItems = ({ activeSection, isSticky }) => (
-    <ItemsWrapper>
-        <a>Lucas Lombardo</a>
-        <ul>
-            <li className={activeSection === `about` ? `active` : ``}>
-                <a>About</a>
-            </li>
-            <li className={activeSection === `work` ? `active` : ``}>
-                <a>Work</a>
-            </li>
-            <li>
-                <a>Blog</a>
-            </li>
-            <li className={activeSection === `contact` ? `active` : ``}>
-                <a>Contact</a>
-            </li>
-        </ul>
-    </ItemsWrapper>
-)
+const NavItems = ({ activeSection, isSticky }) => {
+    const [ open, setOpen ] = useState(false)
+
+    return (
+        <ItemsWrapper className={open ? `open` : `closed`}>
+            <a>Lucas Lombardo</a>
+            <button onClick={() => setOpen(!open)} className="hamburger toggle">X</button>
+            <ul onClick={() => console.log(`click`)}>
+                <li className={activeSection === `about` ? `active` : ``}>
+                    <a>About</a>
+                </li>
+                <li className={activeSection === `work` ? `active` : ``}>
+                    <a>Work</a>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li className={activeSection === `contact` ? `active` : ``}>
+                    <a>Contact</a>
+                </li>
+            </ul>
+        </ItemsWrapper>
+    )
+}
 
 export default NavItems
