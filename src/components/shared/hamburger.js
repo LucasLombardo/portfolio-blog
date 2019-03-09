@@ -14,9 +14,9 @@ const HamburgerWrapper = styled.div`
 const Hamburger = ({ isOpen }) => {
     return (
         <HamburgerWrapper>
-            <div class={`hamburger hamburger--elastic ${ isOpen ? `is-active` : `` }`}>
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
+            <div className={`hamburger hamburger--elastic ${ isOpen ? `is-active` : `` }`}>
+                <div className="hamburger-box">
+                    <div className="hamburger-inner"></div>
                 </div>
             </div>
         </HamburgerWrapper>
