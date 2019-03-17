@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
 import { colors } from "../styles/lib"
 import NavItems from "./navItems"
 
 const NavWrapper = styled.nav`
     position: absolute;
     z-index: 100;
+
     width: 100%;
+    height: 44px;
+
     &.sticky {
-        background: ${ colors.teal };
         position: fixed;
+        background: ${ colors.teal };
     }
 `
 
@@ -41,6 +45,10 @@ const Nav = ({ refs }) => {
             <NavItems activeSection={activeSection} isSticky={sticky} />
         </NavWrapper>
     )
+}
+
+Nav.propTypes = {
+    refs: PropTypes.array,
 }
 
 export default Nav
