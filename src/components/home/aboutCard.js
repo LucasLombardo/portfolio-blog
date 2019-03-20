@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import ScrollAnimation from "react-animate-on-scroll"
 
 const ScAboutCard = styled.div`
     background: #fff;
@@ -110,14 +111,20 @@ const ScAboutCard = styled.div`
 
 const AboutCard = ({ image, children, right }) => {
     return (
-        <ScAboutCard className={right ? `right` : `left`}>
-            <div className="image-wrapper">
-                <img src={image} />
-            </div>
-            <div className="content">
-                {children}
-            </div>
-        </ScAboutCard>
+        <ScrollAnimation
+            animateIn={right ? `rotate-in-right` : `rotate-in-left`}
+            animateOnce={true}
+            duration={0.8}
+        >
+            <ScAboutCard className={right ? `right` : `left`}>
+                <div className="image-wrapper">
+                    <img src={image} />
+                </div>
+                <div className="content">
+                    {children}
+                </div>
+            </ScAboutCard>
+        </ScrollAnimation>
     )
 }
 

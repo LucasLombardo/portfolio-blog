@@ -1,27 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { keyframes, colors } from "../styles/lib"
 import AboutCard from "./aboutCard"
 import Container from "../styles/container"
 
 const AboutWrapper = styled.div`
-    background: #fff;
+    background: ${ colors.black };
     background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
     no-repeat center center fixed;
     background-size: cover;
     padding: 7rem 0 8rem 0;
     text-align: center;
-    color: #3f3f3f;
-    .about-header:before {
-        content: '';
-        display: inline-block;
-        width: 6.5rem;
-        height: 0.25rem;
-        margin: 0 0 1.5rem 0;
-        border-radius: 4px;
-        background-color: #3dc5ad;
-    }
+    color: ${ colors.black };
     h2 {
         font-size: 2.3rem;
     }
@@ -29,6 +19,8 @@ const AboutWrapper = styled.div`
     .svg-inline--fa.fa-w-16 {
         margin-left: 0.4rem;
     }
+    ${ keyframes.rotateInUpRight };
+    ${ keyframes.rotateInUpLeft };
 `
 
 const About = () => {
@@ -36,7 +28,9 @@ const About = () => {
         <AboutWrapper>
             <h2>About</h2>
             <Container>
-                <AboutCard image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec1.jpg">
+                <AboutCard
+                    image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec1.jpg"
+                >
                     <h3>Self Driven developer with a passion for building cool things</h3>
                     <p>
                     I'm a Junior developer mainly focused on full stack JavaScript development.
@@ -51,7 +45,10 @@ const About = () => {
                     </p>
                 </AboutCard>
 
-                <AboutCard image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec2.jpg" right>
+                <AboutCard
+                    image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec2.jpg"
+                    right
+                >
                     <h3>Currently seeking employment in the Boston Area</h3>
                     <p>
                     I'm currently looking for full time employment in the Greater Boston area.
