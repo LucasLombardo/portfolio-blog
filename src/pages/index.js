@@ -6,6 +6,7 @@ import Header from '../components/home/header'
 import About from "../components/home/about"
 import Skills from "../components/home/skills"
 import Work from "../components/home/work"
+import Contact from "../components/home/contact"
 
 const IndexPage = () => {
     const navRefs = [ useRef(null), useRef(null), useRef(null) ]
@@ -22,7 +23,9 @@ const IndexPage = () => {
             <div ref={navRefs[1]} id="work">
                 <Work />
             </div>
-            <div ref={navRefs[2]} id="contact" style={{ height: `150vh`, background: `#fff` }} />
+            <div ref={navRefs[2]} id="contact">
+                <Contact />
+            </div>
         </Layout>
     )
 }
