@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { keyframes, colors } from "../styles/lib"
+import { colors } from "../styles/lib"
 import AboutCard from "./aboutCard"
 import Container from "../styles/container"
 
@@ -19,8 +19,6 @@ const AboutWrapper = styled.div`
     .svg-inline--fa.fa-w-16 {
         margin-left: 0.4rem;
     }
-    ${ keyframes.rotateInUpRight };
-    ${ keyframes.rotateInUpLeft };
 `
 
 const About = () => {

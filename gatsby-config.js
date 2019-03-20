@@ -27,6 +27,26 @@ module.exports = {
                 icon: `src/images/favicon.png`,
             },
         },
+        {
+            resolve: `gatsby-source-wordpress`,
+            options: {
+                baseUrl: `https://lucas-blog.oakpointdigital.com`,
+                protocol: `https`,
+                hostingWPCOM: false,
+                useACF: true,
+                auth: {
+                    htaccess_user: `lucasl1968`,
+                    htaccess_pass: `RZ&3qzbxyWDin^NNo*x63sxRCqqEcL`,
+                    htaccess_sendImmediately: false,
+                },
+                // verbose output for debugging
+                verboseOutput: false,
+                // Set how many pages are retrieved per API request.
+                perPage: 100,
+                // Set how many simultaneous requests are sent at once.
+                concurrentRequests: 10,
+            },
+        },
         `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
