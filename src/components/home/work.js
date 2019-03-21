@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Project from "./project"
 import Container from "../styles/container"
+import SectionHeader from "../styles/sectionHeader"
 
 const WorkWrapper = styled.section`
     padding: 6rem 0 8rem 0;
@@ -142,11 +143,13 @@ const Skills = () => {
       }
     `)
     const projects = data.wordpressPage.acf.projects.list
-    console.log(projects)
     return (
         <WorkWrapper>
             <Container>
-                <h2>Work</h2>
+                <SectionHeader>
+                    <h2>Work</h2>
+                </SectionHeader>
+
                 {projects.map((project, i) => (
                     <Project key={project.title} project={project} right={(i % 2) ? `right` : ``} />
                 ))}

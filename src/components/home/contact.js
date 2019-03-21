@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../styles/container'
 import styled from "styled-components"
 import { colors } from "../styles/lib"
+import SectionHeader from '../styles/sectionHeader'
 
 const ScContact = styled.section`
     background: ${ colors.white };
@@ -62,13 +63,9 @@ const Contact = ({ action }) => (
                     </label>
                     <input type="text" id="full-name" name="full-name" />
                 </div>
-                <header>
-                    <h2>Contact Me</h2>
-                    <p>
-                        Thanks for checking out my website! Please feel free to contact me
-                        with any questions or opportunities
-                    </p>
-                </header>
+                <SectionHeader>
+                    <h2>Contact</h2>
+                </SectionHeader>
                 <div className="name-email">
                     <label htmlFor="name" className="sr-only">
                         Name

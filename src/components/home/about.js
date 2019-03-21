@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { colors } from "../styles/lib"
 import AboutCard from "./aboutCard"
 import Container from "../styles/container"
+import SectionHeader from "../styles/sectionHeader"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -26,7 +27,9 @@ const AboutWrapper = styled.div`
 const About = () => {
     return (
         <AboutWrapper>
-            <h2>About</h2>
+            <SectionHeader>
+                <h2>About</h2>
+            </SectionHeader>
             <Container>
                 <AboutCard
                     image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec1.jpg"

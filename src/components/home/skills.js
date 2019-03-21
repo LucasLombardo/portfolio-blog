@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../styles/container"
 import { colors } from "../styles/lib"
+import SectionHeader from "../styles/sectionHeader"
 
 const SkillsWrapper = styled.div`
     background: ${ colors.white };
@@ -19,7 +20,9 @@ const Skills = () => {
     return (
         <SkillsWrapper>
             <Container>
-                <h2>Skills</h2>
+                <SectionHeader>
+                    <h2>Skills</h2>
+                </SectionHeader>
                 <p>(still working on deciding what this section should look like)</p>
                 <div className="skillDivs">
                     <div>

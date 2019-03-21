@@ -30,7 +30,7 @@ const Project = ({ project, right }) => {
                         rel="noopener noreferrer"
                         className="button"
                     >
-          Live Project
+                        Live Project
                     </a>
                     {urls.repo ? (
                         <a
@@ -39,7 +39,7 @@ const Project = ({ project, right }) => {
                             rel="noopener noreferrer"
                             className="button secondary"
                         >
-            Project Code
+                            Project Code
                         </a>
                     ) : (
                         <p className="no-code">Private Repo, code available on request</p>
