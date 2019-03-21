@@ -1,11 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
-import { normalize, typography, keyframes } from './lib'
+import { normalize, typography, keyframes, buttons } from './lib'
 
 const GlobalStyles = createGlobalStyle`
     ${ normalize }
     ${ typography }
     ${ keyframes.rotateInUpRight }
     ${ keyframes.rotateInUpLeft }
+    ${ buttons }
 
     .sr-only {
         position:absolute;
