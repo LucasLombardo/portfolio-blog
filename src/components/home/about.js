@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { colors } from "../styles/lib"
 import AboutCard from "./aboutCard"
 import Container from "../styles/container"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDownload, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 const AboutWrapper = styled.div`
     background: ${ colors.black };
@@ -53,11 +55,22 @@ const About = () => {
                     My resume and some samples of my work are available below. If you have any
                     interest please don't hesitate to reach out.
                     </p>
-                    <p>
-                    When I’m not working towards making the web a better place, you can find me
-                    hiking in the great outdoors, exercising at my local gym, or snowboarding at
-                    one of the great mountains here in New England.
-                    </p>
+                    <a
+                        className="button primary"
+                        // eslint-disable-next-line
+                        href="https://res.cloudinary.com/dov1pamgz/image/upload/v1547494960/Resume_LombardoLucas.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Resume
+                        <FontAwesomeIcon icon={faDownload} />
+                    </a>
+                    <a
+                        className="button secondary"
+                    >
+                        Portfolio
+                        <FontAwesomeIcon icon={faArrowDown} />
+                    </a>
                 </AboutCard>
             </Container>
         </AboutWrapper>
