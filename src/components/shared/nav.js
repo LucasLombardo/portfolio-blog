@@ -22,17 +22,23 @@ const Nav = ({ refs }) => {
     const [activeSection, setActiveSection] = useState(`header`)
 
     useEffect(() => {
-        // run handlescroll on update and scroll, remove scroll listener on unmount
-        handleScroll()
-        window.addEventListener(`scroll`, handleScroll)
-        return () => window.removeEventListener(`scroll`, handleScroll)
-        // rerender if sticky or activeSection changes
+        if (refs) {
+            // run handlescroll on update and scroll, remove scroll listener on unmount
+            handleScroll()
+            window.addEventListener(`scroll`, handleScroll)
+            return () => window.removeEventListener(`scroll`, handleScroll)
+            // rerender if sticky or activeSection changes
+        } else {
+            // if not on home page, set active to blog and nav to sticky
+            setActiveSection(`blog`)
+            setSticky(true)
+        }
     }, [sticky, activeSection])
 
     const handleScroll = () => {
         const yOffset = window.pageYOffset
         // get top of all section refs
-        const sectionTops = refs.map(r => r.current.offsetTop)
+        const sectionTops = refs.map(r => r.current.offsetTop - 15)
         // set whether nav should be sticky
         setSticky(sectionTops[0] < yOffset + 4)
         // set active section
@@ -40,9 +46,25 @@ const Nav = ({ refs }) => {
         setActiveSection([`header`, `about`, `work`, `contact`][activeIndex])
     }
 
+    const scrollToRef = (e, ref) => {
+        // scrolls to given ref if within pixel limit
+        e.preventDefault()
+        const currPos = window.pageYOffset
+        // if no ref passed, set top to 0
+        const top = ref ? ref.current.offsetTop : 0
+        // if distance to scroll over 2400px, jump there rather than scrolling
+        const behavior = Math.abs(top - currPos) > 2400 ? `auto` : `smooth`
+        window.scrollTo({ top: top, behavior })
+    }
+
     return (
         <NavWrapper className={sticky ? `sticky` : ``}>
-            <NavItems activeSection={activeSection} isSticky={sticky} />
+            <NavItems
+                activeSection={activeSection}
+                scrollToRef={scrollToRef}
+                isSticky={sticky}
+                refs={refs}
+            />
         </NavWrapper>
     )
 }
