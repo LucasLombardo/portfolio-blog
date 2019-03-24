@@ -14,7 +14,6 @@ const SkillsWrapper = styled.div`
         margin-bottom: 2em;
     }
     .skillDivs {
-        height: 140px;
         border-top: 6px double ${ colors.teal };
         border-bottom: 6px double ${ colors.teal };
     }

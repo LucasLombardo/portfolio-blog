@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Lucas Lombardo <lucasalombardo@gmail.com>",
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.10.17",
     "@fortawesome/fontawesome-svg-core": "^1.2.16",
     "@fortawesome/free-brands-svg-icons": "^5.8.0",
     "@fortawesome/free-solid-svg-icons": "^5.8.0",
