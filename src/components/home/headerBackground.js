@@ -14,7 +14,7 @@ const Background = styled.div`
         /* override default gatsby image fluid position */
         position: fixed !important; /* stylelint-disable-line */
         z-index: -1;
-        min-height: 100%;
+        min-height: 100vh;
     }
 
     .overlay {
