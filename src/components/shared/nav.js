@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { colors } from "../styles/lib"
+import { colors, elevation } from "../styles/lib"
 import NavItems from "./navItems"
 
 const NavWrapper = styled.nav`
@@ -9,11 +9,13 @@ const NavWrapper = styled.nav`
     z-index: 100;
 
     width: 100%;
-    height: 44px;
+    height: 54px;
 
-    &.sticky {
+    &.sticky-bar {
         position: fixed;
-        background: ${ colors.teal };
+        margin-top: -1px;
+        background: ${ colors.white };
+        box-shadow: ${ elevation[1] };
     }
 `
 
@@ -46,22 +48,10 @@ const Nav = ({ refs }) => {
         setActiveSection([`header`, `about`, `work`, `contact`][activeIndex])
     }
 
-    const scrollToRef = (e, ref) => {
-        // scrolls to given ref if within pixel limit
-        e.preventDefault()
-        const currPos = window.pageYOffset
-        // if no ref passed, set top to 0
-        const top = ref ? ref.current.offsetTop : 0
-        // if distance to scroll over 2400px, jump there rather than scrolling
-        const behavior = Math.abs(top - currPos) > 2400 ? `auto` : `smooth`
-        window.scrollTo({ top: top, behavior })
-    }
-
     return (
-        <NavWrapper className={sticky ? `sticky` : ``}>
+        <NavWrapper className={sticky ? `sticky-bar` : ``}>
             <NavItems
                 activeSection={activeSection}
-                scrollToRef={scrollToRef}
                 isSticky={sticky}
                 refs={refs}
             />

@@ -4,7 +4,7 @@ import NavItemsWrapper from "../styles/navItemsWrapper"
 import Hamburger from './hamburger'
 import PropTypes from "prop-types"
 
-const NavItems = ({ activeSection, scrollToRef, refs, isSticky }) => {
+const NavItems = ({ activeSection, refs, isSticky }) => {
     const [ open, setOpen ] = useState(false)
 
     const toggleNav = () => {
@@ -17,9 +17,27 @@ const NavItems = ({ activeSection, scrollToRef, refs, isSticky }) => {
         }
     }
 
+    const scrollToRef = (e, ref) => {
+        // scrolls to given ref if within pixel limit
+        e.preventDefault()
+        const currPos = window.pageYOffset
+        // if no ref passed, set top to 0
+        const top = ref ? ref.current.offsetTop : 0
+        // if distance to scroll over 2400px, jump there rather than scrolling
+        const behavior = Math.abs(top - currPos) > 2400 ? `auto` : `smooth`
+        window.scrollTo({ top: top, behavior })
+        // close nav if open
+        if (open) toggleNav()
+    }
+
+    const openClass = open ? `open` : ``
+    const stickyClass = isSticky ? `sticky` : ``
+
     return (
-        <NavItemsWrapper className={open ? `open` : `closed`}>
-            <Link to="/" onClick={e => refs ? scrollToRef(e) : ``}>Lucas Lombardo</Link>
+        <NavItemsWrapper className={`${ openClass } ${ stickyClass }`}>
+            <Link to="/" onClick={e => refs ? scrollToRef(e) : ``} className="logo">
+                Lucas Lombardo
+            </Link>
             <div className="sidebar" onClick={handleSidebarClick} >
                 <button onClick={toggleNav} className="hamburger toggle">
                     <Hamburger isOpen={open} />

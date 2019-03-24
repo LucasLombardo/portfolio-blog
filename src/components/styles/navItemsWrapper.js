@@ -21,7 +21,16 @@ const MobileNavItems = css`
         .hamburger.toggle {
             position: fixed;
         }
-
+        &.sticky {
+            ul a {
+                color: ${ colors.white };
+            }
+            .active {
+                &::after {
+                    border-bottom: 4px solid ${ colors.white };
+                }
+            }
+        }
         .sidebar {
             /* overlays the part of page not covered with the links list */
             position: fixed;
@@ -95,17 +104,19 @@ const NavItemsWrapper = styled.div`
 
         display: block;
         margin: 0 1em;
-        margin-top: 5px;
+        margin-top: 8px;
 
         line-height: 2em;
         letter-spacing: 0.05em;
-        font-size: 17px;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+        font-size: 18px;
         cursor: pointer;
         transition: 0.15s;
-
+        &.logo {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
         &:hover {
-            transform: translateY(-2px);
             opacity: 0.8;
         }
     }
@@ -121,12 +132,11 @@ const NavItemsWrapper = styled.div`
 
             display: block;
             width: 20%;
-            border-bottom: 4px solid ${ colors.white };
+            border-bottom: 4px solid ${ colors.charcoal };
             border-radius: 2px;
 
             content: "";
             animation: scaleborder 0.4s forwards;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         /* animate underline when section becomes active */
@@ -155,6 +165,21 @@ const NavItemsWrapper = styled.div`
 
         &:focus {
             outline: none;
+        }
+    }
+
+    /* sticky styling */
+    &.sticky {
+        a {
+            color: ${ colors.charcoal };
+        }
+        .hamburger.is-active .hamburger-inner,
+        .hamburger.is-active .hamburger-inner::before,
+        .hamburger.is-active .hamburger-inner::after {
+            background-color: ${ colors.charcoal };
+        }
+        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+            background-color: ${ colors.charcoal };
         }
     }
 
