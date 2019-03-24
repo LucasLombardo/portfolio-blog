@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { colors, elevation } from "../styles/lib"
 import Carousel from '@brainhubeu/react-carousel'
@@ -37,60 +37,81 @@ const SliderWrapper = styled.div`
         box-shadow: ${ elevation[0] };
         border-radius: 4px;
     }
-    .BrainhubCarousel__track {
-        /* margin-left: -9px !important; */
-    }
 `
 
-const SkillSlider = () => (
-    <SliderWrapper>
-        <Carousel
-            slidesPerPage={9}
-            arrows
-            infinite
-        >
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-node.svg" />
-                <p>Node JS</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-html.svg" />
-                <p>HTML5</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-sass.svg" />
-                <p>Sass</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-jsx.svg" />
-                <p>ReactJS</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-css.svg" />
-                <p>CSS3</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-git.svg" />
-                <p>Git</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-javascript.svg" />
-                <p>JavaScript</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-gatsby.svg" />
-                <p>Gatsby JS</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-mongo.svg" />
-                <p>MongoDB</p>
-            </div>
-            <div className="skill-icon">
-                <img src="https://lucaslombardo.com/images/skills/icon-photoshop.svg" />
-                <p>Photoshop</p>
-            </div>
-        </Carousel>
-    </SliderWrapper>
-)
+const SkillSlider = () => {
+    const [skillsDisplayed, setSkillsDisplayed] = useState(8)
+
+    useEffect(() => {
+        handleResize()
+        window.addEventListener(`resize`, handleResize)
+        return () => window.removeEventListener(`resize`, handleResize)
+    })
+
+    const handleResize = () => {
+        const width = window.innerWidth
+        if (width > 850) {
+            setSkillsDisplayed(8)
+        } else if (width > 640) {
+            setSkillsDisplayed(6)
+        } else if (width > 540) {
+            setSkillsDisplayed(5)
+        } else {
+            setSkillsDisplayed(4)
+        }
+    }
+
+    return (
+        <SliderWrapper>
+            <Carousel
+                slidesPerPage={skillsDisplayed}
+                arrows={skillsDisplayed > 4}
+                autoPlay={2700}
+                infinite
+            >
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-node.svg" />
+                    <p>Node JS</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-html.svg" />
+                    <p>HTML5</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-sass.svg" />
+                    <p>Sass</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-jsx.svg" />
+                    <p>ReactJS</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-css.svg" />
+                    <p>CSS3</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-git.svg" />
+                    <p>Git</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-javascript.svg" />
+                    <p>JavaScript</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-gatsby.svg" />
+                    <p>Gatsby JS</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-mongo.svg" />
+                    <p>MongoDB</p>
+                </div>
+                <div className="skill-icon">
+                    <img src="https://lucaslombardo.com/images/skills/icon-photoshop.svg" />
+                    <p>Photoshop</p>
+                </div>
+            </Carousel>
+        </SliderWrapper>
+    )
+}
 
 export default SkillSlider
