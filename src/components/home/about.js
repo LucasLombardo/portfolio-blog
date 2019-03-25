@@ -4,22 +4,26 @@ import { colors } from "../styles/lib"
 import AboutCard from "./aboutCard"
 import Container from "../styles/container"
 import SectionHeader from "../styles/sectionHeader"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload, faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDownload, faArrowDown } from "@fortawesome/free-solid-svg-icons"
 
 const AboutWrapper = styled.div`
+    padding: 7rem 0 8rem 0;
+
     background: ${ colors.black };
     background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
     no-repeat center center fixed;
     background-size: cover;
-    padding: 7rem 0 8rem 0;
-    text-align: center;
     color: ${ colors.black };
+    text-align: center;
+
     h2 {
         font-size: 2.3rem;
     }
+
     .svg-inline--fa.fa-w-14,
     .svg-inline--fa.fa-w-16 {
+        /* download and arrow button icons */
         margin-left: 0.4rem;
     }
 `
