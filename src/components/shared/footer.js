@@ -1,16 +1,19 @@
-import React from 'react'
+import React from "react"
 import styled from "styled-components"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+
+import { colors } from "../styles/lib"
+
 library.add(fab)
 
 const ScFooter = styled.footer`
     padding: 3rem 0;
     color: #bfbfbf;
     text-align: center;
-    background: #fff;
+    background: ${ colors.white };
     p {
         font-size: 0.65rem;
     }

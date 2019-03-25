@@ -1,6 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
+import PropTypes from "prop-types"
+
 import { hamburger } from "../styles/lib"
 
 const HamburgerWrapper = styled.div`

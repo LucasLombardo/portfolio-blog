@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../styles/lib"
 import ScrollAnimation from "react-animate-on-scroll"
+
+import { colors } from "../styles/lib"
 
 const ScAboutCard = styled.article`
     display: flex;

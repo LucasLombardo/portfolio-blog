@@ -1,9 +1,10 @@
 import React from "react"
-import Svg from "../shared/svg"
 import styled from "styled-components"
+import { useSpring, animated } from "react-spring"
+
+import Svg from "../shared/svg"
 import HeaderBackground from "./headerBackground"
 import { colors } from "../styles/lib/colors"
-import { useSpring, animated } from "react-spring"
 
 const Content = styled.div`
     position: relative;

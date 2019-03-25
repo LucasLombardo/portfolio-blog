@@ -1,5 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import { normalize, typography, keyframes, buttons } from './lib'
+import { createGlobalStyle } from "styled-components"
+
+import { normalize, typography, keyframes, buttons } from "./lib"
 
 const GlobalStyles = createGlobalStyle`
     ${ normalize }

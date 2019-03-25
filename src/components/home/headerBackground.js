@@ -1,10 +1,11 @@
 import React from "react"
+import styled from "styled-components"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
 import { useSpring, animated } from "react-spring"
-import { below } from "../styles/lib"
 import Img from "gatsby-image"
+
+import { below } from "../styles/lib"
 
 const Background = styled.div`
     min-height: 100vh;

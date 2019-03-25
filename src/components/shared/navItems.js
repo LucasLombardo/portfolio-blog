@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-import NavItemsWrapper from "../styles/navItemsWrapper"
-import Hamburger from './hamburger'
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
+
+import NavItemsWrapper from "../styles/navItemsWrapper"
+import Hamburger from "./hamburger"
 
 const NavItems = ({ activeSection, refs, isSticky }) => {
     const [ open, setOpen ] = useState(false)

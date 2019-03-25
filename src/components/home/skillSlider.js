@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
+import Carousel from "@brainhubeu/react-carousel"
+import "@brainhubeu/react-carousel/lib/style.css"
+
 import { colors, elevation } from "../styles/lib"
-import Carousel from '@brainhubeu/react-carousel'
-import '@brainhubeu/react-carousel/lib/style.css'
 
 const SliderWrapper = styled.div`
     .skill-icon {

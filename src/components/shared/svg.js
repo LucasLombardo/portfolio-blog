@@ -1,8 +1,8 @@
-// Returns an svg for the given name, to be used for simple icons and shapes.
-/* eslint max-len: 0 */
-
 import React from "react"
 import PropTypes from "prop-types"
+
+// Returns an svg for the given name, to be used for simple icons and shapes.
+/* eslint max-len: 0 */
 
 const Svg = ({ name, fill }) => {
     switch (name) {

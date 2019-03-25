@@ -1,6 +1,7 @@
-import React from 'react'
-import ScrollAnimation from 'react-animate-on-scroll'
+import React from "react"
 import styled from "styled-components"
+import ScrollAnimation from "react-animate-on-scroll"
+
 import { colors } from "../styles/lib"
 
 const ProjectWrapper = styled.article`

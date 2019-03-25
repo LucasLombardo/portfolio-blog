@@ -1,8 +1,9 @@
-import React from 'react'
-import Container from '../styles/container'
+import React from "react"
 import styled from "styled-components"
+
+import Container from "../styles/container"
+import SectionHeader from "../styles/sectionHeader"
 import { colors } from "../styles/lib"
-import SectionHeader from '../styles/sectionHeader'
 
 const ContactWrapper = styled.section`
     padding: 3rem 0 5rem 0;

@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+
 import Container from "../styles/container"
-import { colors } from "../styles/lib"
 import SectionHeader from "../styles/sectionHeader"
 import SkillSlider from "./skillSlider"
+import { colors } from "../styles/lib"
 
 const SkillsWrapper = styled.div`
     background: ${ colors.white };

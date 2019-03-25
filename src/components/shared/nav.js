@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { colors, elevation } from "../styles/lib"
+
 import NavItems from "./navItems"
+import { colors, elevation } from "../styles/lib"
 
 const NavWrapper = styled.nav`
     position: absolute;

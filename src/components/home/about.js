@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../styles/lib"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDownload, faArrowDown } from "@fortawesome/free-solid-svg-icons"
+
 import AboutCard from "./aboutCard"
 import Container from "../styles/container"
 import SectionHeader from "../styles/sectionHeader"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faDownload, faArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { colors } from "../styles/lib"
 
 const AboutWrapper = styled.div`
     padding: 3.8rem 0 6rem 0;
