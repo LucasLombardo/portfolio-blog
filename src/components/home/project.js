@@ -9,6 +9,7 @@ const ProjectWrapper = styled.article`
     align-items: center;
 
     h3 {
+        display: inline-block;
         transition: 0.2s;
         letter-spacing: 0.15rem;
 
