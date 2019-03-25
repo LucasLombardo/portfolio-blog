@@ -13,7 +13,9 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+            <SEO title="Home" keywords={[`lucas lombardo`, `blog`,
+                `react`, `web developer`, `javascript`, `jamstack`,
+                `gatsby`, `boston`, `coding`]} />
             <Nav refs={navRefs} />
             <Header nextSectionRef={navRefs[0]} />
             <section ref={navRefs[0]} id="about">
