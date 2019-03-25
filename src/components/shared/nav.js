@@ -40,7 +40,7 @@ const Nav = ({ refs }) => {
     const handleScroll = () => {
         const yOffset = window.pageYOffset
         // get top of all section refs
-        const sectionTops = refs.map(r => r.current.offsetTop - 15)
+        const sectionTops = refs.map(r => r.current.offsetTop - 55)
         // set whether nav should be sticky
         setSticky(sectionTops[0] < yOffset + 4)
         // set active section
