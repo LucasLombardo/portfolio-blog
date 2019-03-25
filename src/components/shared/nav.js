@@ -10,6 +10,7 @@ const NavWrapper = styled.nav`
 
     width: 100%;
     height: 54px;
+    transition: 0.5s;
 
     &.sticky-bar {
         position: fixed;
