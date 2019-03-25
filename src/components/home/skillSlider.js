@@ -7,9 +7,10 @@ import '@brainhubeu/react-carousel/lib/style.css'
 const SliderWrapper = styled.div`
     .skill-icon {
         img {
-            width: 64%;
             margin: 1.9em 0 0.4em 18%;
+            width: 64%;
         }
+
         p {
             margin: 0 0 1.2em 0;
             font-size: 0.9em;
@@ -17,25 +18,32 @@ const SliderWrapper = styled.div`
         }
     }
     .BrainhubCarousel__arrows {
-        background: rgba(0,0,0,0);
         border: 3px solid ${ colors.teal };
         border-radius: 50%;
+        background: rgba(0,0,0,0);
+
         span {
             border-color: ${ colors.teal };
         }
+
         &:hover {
             background: ${ colors.teal };
+
+            span {
+                border-color: ${ colors.white }
+            }
         }
     }
     .BrainhubCarousel__trackContainer {
         margin: 0 2.1em;
         padding: 0 1.3em;
+        border-radius: 4px;
+
         background: ${ colors.white };
         background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
         no-repeat center center fixed;
         background-size: cover;
         box-shadow: ${ elevation[0] };
-        border-radius: 4px;
     }
 `
 
