@@ -4,49 +4,65 @@ import styled from "styled-components"
 import { colors } from "../styles/lib"
 import SectionHeader from '../styles/sectionHeader'
 
-const ScContact = styled.section`
+const ContactWrapper = styled.section`
+    padding: 6rem 0 5rem 0;
+
     background: ${ colors.white };
     background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
     no-repeat center center fixed;
     background-size: cover;
-    padding: 6rem 0 5rem 0;
+    color: ${ colors.black };
     text-align: center;
-    color: #3f3f3f;
+
     form {
         max-width: 900px;
         margin: 0 auto;
-    }
-    input, textarea {
-        border: 2px solid #e4e4e4;
-        border-radius: 6px;
-        padding: 0.8rem 1rem;
-        margin-bottom: 2rem;
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        color: #3f3f3f;
-        box-shadow: none;
-        &::placeholder {
-            color: #b2aaaa;
-            font-style: italic;
+
+        h2 {
+            margin: 0.5em 0 0 0;
         }
-    }
-    .name-email {
-        display: flex;
-        input {
-            flex: 1;
-            &:first-of-type {
-                margin-right: 2rem;
+        p {
+            margin-bottom: 2.3em;
+        }
+
+        input, textarea {
+            display: block;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1rem;
+            border: 1px solid ${ colors.lightgray };
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+
+            color: ${ colors.black };
+            box-shadow: none;
+
+            &::placeholder {
+                color: ${ colors.lightgray };
+                font-style: italic;
             }
         }
-    }
-    .btn {
-        margin-right: 1.2rem;
+
+        .name-email {
+            display: flex;
+
+            input {
+                flex: 1;
+
+                &:first-of-type {
+                    margin-right: 2rem;
+                }
+            }
+        }
+
+        .btn {
+            margin-right: 1.2rem;
+        }
     }
 `
 
 const Contact = ({ action }) => (
-    <ScContact>
+    <ContactWrapper>
         <Container>
             <form
                 key="contact-form"
@@ -66,6 +82,7 @@ const Contact = ({ action }) => (
                 <SectionHeader>
                     <h2>Contact</h2>
                 </SectionHeader>
+                <p>Thanks for checking out my site. Please feel to leave me a note below to get in touch</p>
                 <div className="name-email">
                     <label htmlFor="name" className="sr-only">
                         Name
@@ -105,7 +122,7 @@ const Contact = ({ action }) => (
                 <input type="hidden" name="form-name" value="contact-me" />
             </form>
         </Container>
-    </ScContact>
+    </ContactWrapper>
 )
 
 export default Contact
