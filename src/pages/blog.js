@@ -5,6 +5,7 @@ import Layout from "../components/shared/layout"
 import Nav from "../components/shared/nav"
 import SectionHeader from "../components/styles/sectionHeader"
 import { colors } from "../components/styles/lib"
+import BlogList from "../components/blog/blogList"
 
 const BlogWrapper = styled.main`
     padding-top: 68px;
@@ -28,6 +29,7 @@ const BlogPage = () => {
                 <SectionHeader>
                     <h2>Blog</h2>
                 </SectionHeader>
+                <BlogList />
             </BlogWrapper>
         </Layout>
     )
