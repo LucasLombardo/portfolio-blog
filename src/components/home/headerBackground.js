@@ -3,10 +3,11 @@ import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { useSpring, animated } from "react-spring"
+import { below } from "../styles/lib"
 import Img from "gatsby-image"
 
 const Background = styled.div`
-    height: 100vh;
+    min-height: 100vh;
 
     .bg-image {
         object-fit: cover;
@@ -26,7 +27,8 @@ const Background = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
+        min-height: 100vh;
         width: 100%;
 
         background-image: linear-gradient(
@@ -36,6 +38,13 @@ const Background = styled.div`
             rgba(0, 0, 0, 0.625)
         );
     }
+
+    ${ below.sm`
+        min-height: 92vh;
+        .overlay, .bg-image {
+            min-height: 92vh;
+        }
+    ` }
 `
 
 const HeaderBackground = ({ children }) => {
