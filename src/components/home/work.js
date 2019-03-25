@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Project from "./project"
@@ -14,6 +14,11 @@ const WorkWrapper = styled.section`
 
     h2 {
         margin: 1.3em 0 -1rem 0;
+    }
+    .view-more {
+        margin: 6em auto 0 auto;
+        display: block;
+        font-size: 0.7em;
     }
 `
 
@@ -46,16 +51,28 @@ const Skills = () => {
       }
     `)
     const projects = data.wordpressPage.acf.projects.list
+    const { displayed } = data.wordpressPage.acf.projects
+
+    const [ projectCount, setProjectCount ] = useState(displayed)
+
     return (
         <WorkWrapper>
             <Container>
                 <SectionHeader>
                     <h2>Projects I've Worked On</h2>
                 </SectionHeader>
-
-                {projects.map((project, i) => (
+                {projects.slice(0, projectCount).map((project, i) => (
                     <Project key={project.title} project={project} right={(i % 2) ? `right` : ``} />
                 ))}
+
+                {projectCount < projects.length && (
+                    <button
+                        className="button primary view-more"
+                        onClick={() => setProjectCount(projectCount + 2)}
+                    >
+                    View More Projects
+                    </button>
+                )}
             </Container>
         </WorkWrapper>
     )
