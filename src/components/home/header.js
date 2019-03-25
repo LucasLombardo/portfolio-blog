@@ -45,7 +45,7 @@ const Chevron = styled.a`
     }
 `
 
-const Header = () => {
+const Header = ({ nextSectionRef }) => {
     const scaleIn = useSpring({
         to: { transform: `scaleY(1)` },
         from: { transform: `scaleY(1.2)` },
@@ -59,6 +59,11 @@ const Header = () => {
         delay: `100`,
     })
 
+    const scrollToNextSection = () => {
+        const top = nextSectionRef.current.offsetTop
+        window.scrollTo({ top, behavior: `smooth` })
+    }
+
     return (
         <header>
             <HeaderBackground>
@@ -68,7 +73,7 @@ const Header = () => {
                         <animated.p style={fadeIn} >Boston based web developer</animated.p>
                     </Content>
                 </animated.div>
-                <Chevron>
+                <Chevron onClick={scrollToNextSection}>
                     <Svg name="chevron" />
                 </Chevron>
             </HeaderBackground>

@@ -15,9 +15,9 @@ const IndexPage = () => {
         <Layout>
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
             <Nav refs={navRefs} />
-            <Header />
+            <Header nextSectionRef={navRefs[0]} />
             <section ref={navRefs[0]} id="about">
-                <About />
+                <About nextSectionRef={navRefs[1]} />
                 <Skills />
             </section>
             <div ref={navRefs[1]} id="work">

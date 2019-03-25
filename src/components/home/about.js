@@ -28,7 +28,12 @@ const AboutWrapper = styled.div`
     }
 `
 
-const About = () => {
+const About = ({ nextSectionRef }) => {
+    const scrollToNextSection = () => {
+        const top = nextSectionRef.current.offsetTop
+        window.scrollTo({ top, behavior: `smooth` })
+    }
+
     return (
         <AboutWrapper>
             <SectionHeader>
@@ -74,6 +79,7 @@ const About = () => {
                     </a>
                     <a
                         className="button secondary"
+                        onClick={scrollToNextSection}
                     >
                         Portfolio
                         <FontAwesomeIcon icon={faArrowDown} />
