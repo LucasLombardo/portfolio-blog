@@ -5,7 +5,7 @@ import { colors } from "../styles/lib"
 import SectionHeader from '../styles/sectionHeader'
 
 const ContactWrapper = styled.section`
-    padding: 6rem 0 5rem 0;
+    padding: 3rem 0 5rem 0;
 
     background: ${ colors.white };
     background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
@@ -19,10 +19,10 @@ const ContactWrapper = styled.section`
         margin: 0 auto;
 
         h2 {
-            margin: 0.5em 0 0 0;
+            margin: 1em 0 0.85em 0;
         }
         p {
-            margin-bottom: 2.3em;
+            margin-bottom: 3em;
         }
 
         input, textarea {
@@ -80,9 +80,12 @@ const Contact = ({ action }) => (
                     <input type="text" id="full-name" name="full-name" />
                 </div>
                 <SectionHeader>
-                    <h2>Contact</h2>
+                    <h2>Contact Me</h2>
                 </SectionHeader>
-                <p>Thanks for checking out my site. Please feel to leave me a note below to get in touch</p>
+                <p>
+                    Thanks for checking out my site. Please feel to leave me a note
+                    below to get in touch
+                </p>
                 <div className="name-email">
                     <label htmlFor="name" className="sr-only">
                         Name

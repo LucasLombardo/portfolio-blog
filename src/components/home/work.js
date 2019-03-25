@@ -6,9 +6,12 @@ import Container from "../styles/container"
 import SectionHeader from "../styles/sectionHeader"
 
 const WorkWrapper = styled.section`
-    padding: 6rem 0 8rem 0;
+    padding: 3.6rem 0 7rem 0;
     color: #fff;
     background: #292f33;
+    h2 {
+        margin: 1.3em 0 -1rem 0;
+    }
     .project {
         display: flex;
         align-items: center;
@@ -147,7 +150,7 @@ const Skills = () => {
         <WorkWrapper>
             <Container>
                 <SectionHeader>
-                    <h2>Work</h2>
+                    <h2>Projects I've Worked On</h2>
                 </SectionHeader>
 
                 {projects.map((project, i) => (

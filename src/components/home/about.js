@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDownload, faArrowDown } from "@fortawesome/free-solid-svg-icons"
 
 const AboutWrapper = styled.div`
-    padding: 7rem 0 8rem 0;
+    padding: 3.8rem 0 6rem 0;
 
     background: ${ colors.black };
     background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
@@ -37,7 +37,7 @@ const About = ({ nextSectionRef }) => {
     return (
         <AboutWrapper>
             <SectionHeader>
-                <h2>About</h2>
+                <h2>About Me</h2>
             </SectionHeader>
             <Container>
                 <AboutCard

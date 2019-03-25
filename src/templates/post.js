@@ -9,28 +9,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import Prism from 'prismjs'
 import { prismTheme } from "../components/styles/lib"
+import SectionHeader from '../components/styles/sectionHeader'
 
 export const ScPost = styled.main`
-    padding: 68px 0 3rem 0;
+    padding: 7.5rem 0 3rem 0;
     background: #fff;
     background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
     no-repeat center center fixed;
     background-size: cover;
     box-sizing: border-box;
     color: #3f3f3f;
-    header {
-        text-align: center;
-        margin-top: 5.5rem;
-        margin-bottom: 2rem;
-        &:before {
-            content: '';
-            display: inline-block;
-            width: 6.5rem;
-            height: 0.25rem;
-            margin: 0 0 1.5rem 0;
-            border-radius: 4px;
-            background-color: #3dc5ad;
-        }
+    h1 {
+        font-size: 1.6em;
+        margin: 1.2em 0 1em 0;
+    }
+    p {
+        font-size: 0.65em;
     }
     .post-body {
         background: #fff;
@@ -85,12 +79,12 @@ class PostTemplate extends Component {
                 <Nav />
                 <ScPost>
                     <Container>
-                        <header>
+                        <SectionHeader>
                             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
                             <p>
                                 Published: {post.date}, Modified: {post.modified}
                             </p>
-                        </header>
+                        </SectionHeader>
                         <div className="post-body">
                             <div className="post-text">
                                 <div

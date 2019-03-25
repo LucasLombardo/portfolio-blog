@@ -8,18 +8,11 @@ import SkillSlider from "./skillSlider"
 const SkillsWrapper = styled.div`
     background: ${ colors.white };
     overflow: auto;
-    padding: 4em 0 5em 0;
-    h2 {
-        margin: 0;
-    }
+    padding: 3.2em 0 5em 0;
     p {
         text-align: center;
         margin: 1em 0 2em 0;
         font-size: 1.1em;
-    }
-    .skillDivs {
-        /* border-top: 3px solid ${ colors.teal };
-        border-bottom: 3px solid ${ colors.teal }; */
     }
 `
 

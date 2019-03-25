@@ -9,7 +9,7 @@ const SectionHeader = styled.header`
         display: inline-block;
         width: 6.5rem;
         height: 0.25rem;
-        margin: 0 0 1rem 0;
+        margin: 0;
         border-radius: 4px;
         background-color: ${ colors.teal };
     }
