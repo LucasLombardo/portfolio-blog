@@ -8,26 +8,26 @@ import SEO from '../components/shared/seo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import Prism from 'prismjs'
-import { prismTheme } from "../components/styles/lib"
+import { prismTheme, colors } from "../components/styles/lib"
 import SectionHeader from '../components/styles/sectionHeader'
 
-export const ScPost = styled.main`
+export const Post = styled.main`
     padding: 7.5rem 0 3rem 0;
-    background: #fff;
+    background: ${ colors.white };
     background: url(https://res.cloudinary.com/dov1pamgz/image/upload/v1547316989/bg.jpg)
     no-repeat center center fixed;
     background-size: cover;
     box-sizing: border-box;
-    color: #3f3f3f;
+    color: ${ colors.black };
     h1 {
         font-size: 1.6em;
         margin: 1.2em 0 1em 0;
     }
-    p {
+    .frontmatter {
         font-size: 0.65em;
     }
     .post-body {
-        background: #fff;
+        background: ${ colors.white };
         border-radius: 4px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
         display: relative;
@@ -77,11 +77,11 @@ class PostTemplate extends Component {
                     description={post.acf.excerpt}
                 />
                 <Nav />
-                <ScPost>
+                <Post>
                     <Container>
                         <SectionHeader>
                             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-                            <p>
+                            <p className="frontmatter">
                                 Published: {post.date}, Modified: {post.modified}
                             </p>
                         </SectionHeader>
@@ -98,7 +98,7 @@ class PostTemplate extends Component {
                             </div>
                         </div>
                     </Container>
-                </ScPost>
+                </Post>
             </Layout>
         )
     }
