@@ -5,7 +5,7 @@ export const keyframes = {
         @-webkit-keyframes rotateInUpLeft {
             from {
                 transform-origin: left bottom;
-                transform: rotate3d(0, 0, 1, 4deg);
+                transform: rotate3d(0, 0, 1, 3.5deg);
                 opacity: 0;
             }
 
@@ -19,7 +19,7 @@ export const keyframes = {
         @keyframes rotateInUpLeft {
             from {
                 transform-origin: left bottom;
-                transform: rotate3d(0, 0, 1, 4deg);
+                transform: rotate3d(0, 0, 1, 3.5deg);
                 opacity: 0;
             }
 
@@ -38,7 +38,7 @@ export const keyframes = {
         @-webkit-keyframes rotateInUpRight {
             from {
                 transform-origin: right bottom;
-                transform: rotate3d(0, 0, 1, -4deg);
+                transform: rotate3d(0, 0, 1, -3.5deg);
                 opacity: 0;
             }
             to {
@@ -51,7 +51,7 @@ export const keyframes = {
         @keyframes rotateInUpRight {
             from {
                 transform-origin: right bottom;
-                transform: rotate3d(0, 0, 1, -4deg);
+                transform: rotate3d(0, 0, 1, -3.5deg);
                 opacity: 0;
             }
 
