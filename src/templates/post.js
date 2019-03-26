@@ -8,6 +8,7 @@ import Prism from "prismjs"
 import SectionHeader from "../components/styles/sectionHeader"
 import Container from "../components/styles/container"
 import Layout from "../components/shared/layout"
+import Comments from "../components/blog/comments"
 import SEO from "../components/shared/seo"
 import Nav from "../components/shared/nav"
 import { prismTheme, colors, below } from "../components/styles/lib"
@@ -118,6 +119,7 @@ class PostTemplate extends Component {
                             </div>
                         </div>
                     </Container>
+                    <Comments slug={post.slug} />
                 </Post>
             </Layout>
         )
