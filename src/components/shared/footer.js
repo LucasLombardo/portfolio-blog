@@ -19,12 +19,18 @@ const ScFooter = styled.footer`
     }
     .svg-inline--fa.fa-w-16,
     .svg-inline--fa.fa-w-14 {
+        margin: 0.2rem 0.85rem;
         width: 26px;
         height: 26px;
-        margin: 0.5rem 1.2rem;
+        padding: 4px;
+        border: 2px solid rgba(0,0,0,0);
+        border-radius: 50%;
+
         transition: 0.2s;
+
         &:hover {
-            color: #3dc5ad;
+            border: 2px dashed ${ colors.teal };
+            color: ${ colors.teal };
         }
     }
     .email {
