@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Container from "../styles/container"
-import { colors } from "../styles/lib"
+import { colors, below } from "../styles/lib"
 
 const ListWrapper = styled.section`
     article {
@@ -25,6 +25,13 @@ const ListWrapper = styled.section`
             padding: 0 1.2rem;
             line-height: 2.3rem;
         }
+
+        ${ below.sm`
+            padding: 2rem;
+        ` }
+        ${ below.xs`
+            padding: 2rem 1.2rem;
+        ` }
     }
 `
 

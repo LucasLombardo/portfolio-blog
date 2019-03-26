@@ -10,6 +10,9 @@ const Container = styled.div`
     ${ below.xl`
         width: 1024px;
     ` }
+    ${ below.xs`
+        max-width: 94%;
+    ` }
 `
 
 export default Container
