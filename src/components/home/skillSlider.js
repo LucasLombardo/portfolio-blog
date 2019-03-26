@@ -79,43 +79,43 @@ const SkillSlider = () => {
                 infinite
             >
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-node.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-node.svg" />
                     <p>Node JS</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-html.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-html.svg" />
                     <p>HTML5</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-sass.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-sass.svg" />
                     <p>Sass</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-jsx.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-jsx.svg" />
                     <p>ReactJS</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-css.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-css.svg" />
                     <p>CSS3</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-git.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-git.svg" />
                     <p>Git</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-javascript.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-javascript.svg" />
                     <p>JavaScript</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-gatsby.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-gatsby.svg" />
                     <p>Gatsby JS</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-mongo.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-mongo.svg" />
                     <p>MongoDB</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://lucaslombardo.com/images/skills/icon-photoshop.svg" />
+                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-photoshop.svg" />
                     <p>Photoshop</p>
                 </div>
             </Carousel>
