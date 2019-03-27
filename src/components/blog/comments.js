@@ -10,6 +10,9 @@ const CommentsWrapper = styled.div`
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
     padding: 2rem 3rem;
+    a {
+        color: ${ colors.teal };
+    }
 `
 
 const Comments = ({ slug }) => {
