@@ -49,7 +49,7 @@ const BlogList = () => {
                     acf {
                         excerpt
                     }
-                    date(formatString: "MMMM DDDo, YYYY")
+                    date(formatString: "MMMM Do, YYYY")
                     }
                 }
             }

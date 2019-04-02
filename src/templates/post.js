@@ -134,8 +134,8 @@ export const POST_TEMPLATE_QUERY = graphql`
       title
       content
       slug
-      date(formatString: "MMMM DDDo, YYYY")
-      modified(formatString: "MMMM DDDo, YYYY")
+      date(formatString: "MMMM Do, YYYY")
+      modified(formatString: "MMMM Do, YYYY")
       acf {
         excerpt
         seo_tags {
