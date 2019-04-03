@@ -40,8 +40,31 @@ export const Post = styled.main`
         background: ${ colors.white };
 
         img {
-            width: 100%;
             border-radius: 4px 4px 0 0;
+            max-width: 100%;
+        }
+
+        a {
+            position: relative;
+            box-sizing: content-box;
+            ::after {
+                content: "";
+                width: 102%;
+                margin-left: -1%;
+                height: 0;
+                bottom: -1px;
+                position: absolute;
+                background: rgba(61, 197, 173, 0.15);
+                border-bottom: 2px solid ${ colors.teal };
+                border-radius: 2px;
+                left: 0;
+                transition: 0.2s ease;
+            }
+            &:hover::after {
+                height: 100%;
+                width: 106%;
+                margin-left: -3%;
+            }
         }
 
         .post-text {
