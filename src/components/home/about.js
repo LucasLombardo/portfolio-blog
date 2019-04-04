@@ -44,12 +44,13 @@ const About = ({ nextSectionRef }) => {
                 <AboutCard
                     image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec1.jpg"
                 >
-                    <h3>Self Driven developer with a passion for building cool things</h3>
+                    <h3>Self Driven developer with a passion for learning</h3>
                     <p>
-                    I'm a Junior developer mainly focused on full stack JavaScript development.
-                    Some of my favorite things to work with are ReactJS, NodeJS, GraphQL, and
-                    GatsbyJS. I'm currently working on improving my skills in ExpressJS
-                    and TypeScript.
+                    I'm a web developer mainly focused on full stack JavaScript development.
+                    Some of my favorite things to work with are React, Node, and Gatsby. One
+                    of the main things that lead me to web development was my love for learning new
+                    things. I'm currently in a full time coding bootcamp with General Assembly where
+                    I'm focused on improving my skills in GraphQL and Express.
                     </p>
                     <p>
                     When I’m not working towards making the web a better place, you can find me
