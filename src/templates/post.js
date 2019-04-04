@@ -44,7 +44,7 @@ export const Post = styled.main`
             max-width: 100%;
         }
 
-        a {
+        .post-content a {
             position: relative;
             box-sizing: content-box;
             ::after {
