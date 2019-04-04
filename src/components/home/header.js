@@ -10,7 +10,7 @@ const Content = styled.div`
     position: relative;
     z-index: 2;
 
-    padding: 2.3em 0.5em;
+    padding: 2.2em 0.5em;
 
     background: ${ colors.teal };
     color: ${ colors.white };
@@ -23,6 +23,7 @@ const Content = styled.div`
 
     p {
         margin-top: 0;
+        font-size: 1.1em;
     }
 `
 
