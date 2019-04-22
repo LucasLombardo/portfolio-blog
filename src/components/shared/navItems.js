@@ -18,6 +18,8 @@ const NavItems = ({ activeSection, isHome, isSticky }) => {
         }
     }
 
+    const closeNav = () => setOpen(false)
+
     const scrollToSection = (e, sectionIndex) => {
         // scrolls to given ref if within pixel limit
         e.preventDefault()
@@ -41,7 +43,7 @@ const NavItems = ({ activeSection, isHome, isSticky }) => {
 
     return (
         <NavItemsWrapper className={`${ openClass } ${ stickyClass }`}>
-            <Link to="/" onClick={e => isHome ? scrollToSection(e) : ``} className="logo">
+            <Link to="/" onClick={e => isHome ? scrollToSection(e) : closeNav()} className="logo">
                 Lucas Lombardo
             </Link>
             <div className="sidebar" onClick={handleSidebarClick} >
@@ -50,20 +52,20 @@ const NavItems = ({ activeSection, isHome, isSticky }) => {
                 </button>
                 <ul>
                     <li className={activeSection === `about` ? `active` : ``}>
-                        <Link to="/#about" onClick={e => isHome ? scrollToSection(e, 0) : ``}>
+                        <Link to="/#about" onClick={e => isHome ? scrollToSection(e, 0) : closeNav()}>
                             About
                         </Link>
                     </li>
                     <li className={activeSection === `work` ? `active` : ``}>
-                        <Link to="/#work" onClick={e => isHome ? scrollToSection(e, 1) : ``}>
+                        <Link to="/#work" onClick={e => isHome ? scrollToSection(e, 1) : closeNav()}>
                             Work
                         </Link>
                     </li>
                     <li className={activeSection === `blog` ? `active` : ``}>
-                        <Link to="/blog">Blog</Link>
+                        <Link onClick={closeNav} to="/blog">Blog</Link>
                     </li>
                     <li className={activeSection === `contact` ? `active` : ``}>
-                        <Link to="/#contact" onClick={e => isHome ? scrollToSection(e, 2) : ``}>
+                        <Link to="/#contact" onClick={e => isHome ? scrollToSection(e, 2) : closeNav()}>
                             Contact
                         </Link>
                     </li>
