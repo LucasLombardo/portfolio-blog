@@ -21,12 +21,19 @@ const NavWrapper = styled.nav`
     }
 `
 
-const Nav = ({ refs }) => {
+const Nav = ({ navPath }) => {
     const [sticky, setSticky] = useState(false)
     const [activeSection, setActiveSection] = useState(`header`)
+    const [sections, setSections] = useState([])
 
     useEffect(() => {
-        if (refs) {
+        setSections([
+            document.querySelector(`#about`),
+            document.querySelector(`#work`),
+            document.querySelector(`#contact`)
+        ])
+        if (navPath === `/`) {
+            setSticky(false)
             // run handlescroll on update and scroll, remove scroll listener on unmount
             handleScroll()
             window.addEventListener(`scroll`, handleScroll)
@@ -37,17 +44,28 @@ const Nav = ({ refs }) => {
             setActiveSection(`blog`)
             setSticky(true)
         }
-    }, [sticky, activeSection])
+    }, [sticky, activeSection, navPath])
 
     const handleScroll = () => {
-        const yOffset = window.pageYOffset
-        // get top of all section refs
-        const sectionTops = refs.map(r => r.current.offsetTop - 55)
-        // set whether nav should be sticky
-        setSticky(sectionTops[0] < yOffset + 4)
-        // set active section
-        const activeIndex = sectionTops.filter(n => n < yOffset).length
-        setActiveSection([`header`, `about`, `work`, `contact`][activeIndex])
+        if (navPath === `/`) {
+            const sections = [
+                document.querySelector(`#about`),
+                document.querySelector(`#work`),
+                document.querySelector(`#contact`),
+            ]
+            const yOffset = window.pageYOffset
+            try {
+                const sectionTops = sections.map(s => s.offsetTop - 55)
+                // set whether nav should be sticky
+                setSticky(sectionTops[0] < yOffset + 4)
+                // set active section
+                const activeIndex = sectionTops.filter(n => n < yOffset).length
+                setActiveSection([`header`, `about`, `work`, `contact`][activeIndex])
+            } catch {
+                // first render of page change does not reflect the updated path,
+                // this should only happen once and then correct path will be passed
+            }
+        }
     }
 
     return (
@@ -55,14 +73,11 @@ const Nav = ({ refs }) => {
             <NavItems
                 activeSection={activeSection}
                 isSticky={sticky}
-                refs={refs}
+                sections={sections}
+                isHome={navPath === `/`}
             />
         </NavWrapper>
     )
-}
-
-Nav.propTypes = {
-    refs: PropTypes.array,
 }
 
 export default Nav

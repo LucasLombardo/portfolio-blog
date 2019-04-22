@@ -57,7 +57,7 @@ const Skills = () => {
     const [ projectCount, setProjectCount ] = useState(displayed)
 
     return (
-        <WorkWrapper>
+        <WorkWrapper id="work">
             <Container>
                 <SectionHeader>
                     <h2>Projects I've Worked On</h2>

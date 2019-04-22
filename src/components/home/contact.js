@@ -63,7 +63,7 @@ const ContactWrapper = styled.section`
 `
 
 const Contact = ({ action }) => (
-    <ContactWrapper>
+    <ContactWrapper id="contact">
         <Container>
             <form
                 key="contact-form"

@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import SEO from "../components/shared/seo"
-import Nav from "../components/shared/nav"
 import SectionHeader from "../components/styles/sectionHeader"
 import { colors } from "../components/styles/lib"
 import BlogList from "../components/blog/blogList"
@@ -26,7 +25,6 @@ const BlogPage = () => {
                 `react`, `web development`, `javascript`, `jamstack`,
                 `gatsby`, `developer`, `boston`, `coding`]}
             />
-            <Nav />
             <BlogWrapper>
                 <SectionHeader>
                     <h2>Blog Posts</h2>

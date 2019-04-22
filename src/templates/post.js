@@ -9,7 +9,6 @@ import SectionHeader from "../components/styles/sectionHeader"
 import Container from "../components/styles/container"
 import Comments from "../components/blog/comments"
 import SEO from "../components/shared/seo"
-import Nav from "../components/shared/nav"
 import { prismTheme, colors, below } from "../components/styles/lib"
 
 export const Post = styled.main`
@@ -119,7 +118,6 @@ class PostTemplate extends Component {
                     ]}
                     description={post.acf.excerpt}
                 />
-                <Nav />
                 <Post>
                     <Container>
                         <SectionHeader>

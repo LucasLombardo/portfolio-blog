@@ -29,14 +29,14 @@ const AboutWrapper = styled.div`
     }
 `
 
-const About = ({ nextSectionRef }) => {
-    const scrollToNextSection = () => {
-        const top = nextSectionRef.current.offsetTop
+const About = () => {
+    const scrollToWork = () => {
+        const top = document.querySelector(`#work`).offsetTop
         window.scrollTo({ top, behavior: `smooth` })
     }
 
     return (
-        <AboutWrapper>
+        <AboutWrapper id="about">
             <SectionHeader>
                 <h2>About Me</h2>
             </SectionHeader>
@@ -46,16 +46,16 @@ const About = ({ nextSectionRef }) => {
                 >
                     <h3>Self Driven developer with a passion for learning</h3>
                     <p>
-                    I'm a web developer mainly focused on full stack JavaScript development.
-                    Some of my favorite things to work with are React, Node, and Gatsby. One
-                    of the main things that lead me to web development was my love for learning new
-                    things. I'm currently in a full time coding bootcamp with General Assembly where
-                    I'm focused on improving my skills in GraphQL and Express.
+                        I'm a web developer mainly focused on full stack JavaScript development.
+                        Some of my favorite things to work with are React, Node, and Gatsby. One
+                        of the main things that lead me to web development was my love for learning new
+                        things. I'm currently in a full time coding bootcamp with General Assembly where
+                        I'm focused on improving my skills in GraphQL and Express.
                     </p>
                     <p>
-                    When I’m not working towards making the web a better place, you can find me
-                    hiking in the great outdoors, exercising at my local gym, or snowboarding at
-                    one of the great mountains here in New England.
+                        When I’m not working towards making the web a better place, you can find me
+                        hiking in the great outdoors, exercising at my local gym, or snowboarding at
+                        one of the great mountains here in New England.
                     </p>
                 </AboutCard>
 
@@ -65,9 +65,9 @@ const About = ({ nextSectionRef }) => {
                 >
                     <h3>Currently seeking employment in the Boston Area</h3>
                     <p>
-                    I'm currently looking for full time employment in the Greater Boston area.
-                    My resume and some samples of my work are available below. If you have any
-                    interest please don't hesitate to reach out.
+                        I'm currently looking for full time employment in the Greater Boston area.
+                        My resume and some samples of my work are available below. If you have any
+                        interest please don't hesitate to reach out.
                     </p>
                     <a
                         className="button primary"
@@ -81,7 +81,7 @@ const About = ({ nextSectionRef }) => {
                     </a>
                     <a
                         className="button secondary"
-                        onClick={scrollToNextSection}
+                        onClick={scrollToWork}
                     >
                         Portfolio
                         <FontAwesomeIcon icon={faArrowDown} />

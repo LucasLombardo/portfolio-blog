@@ -61,8 +61,8 @@ const Header = ({ nextSectionRef }) => {
         delay: `100`,
     })
 
-    const scrollToNextSection = () => {
-        const top = nextSectionRef.current.offsetTop
+    const scrollToAbout = () => {
+        const top = document.querySelector(`#about`).offsetTop
         window.scrollTo({ top, behavior: `smooth` })
     }
 
@@ -75,7 +75,7 @@ const Header = ({ nextSectionRef }) => {
                         <animated.p style={fadeIn} >Boston based web developer</animated.p>
                     </Content>
                 </animated.div>
-                <Chevron onClick={scrollToNextSection}>
+                <Chevron onClick={scrollToAbout}>
                     <Svg name="chevron" />
                 </Chevron>
             </HeaderBackground>
