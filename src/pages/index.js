@@ -1,5 +1,4 @@
 import React, { useRef } from "react"
-import Layout from "../components/shared/layout"
 import SEO from "../components/shared/seo"
 import Nav from "../components/shared/nav"
 import Header from '../components/home/header'
@@ -12,7 +11,7 @@ const IndexPage = () => {
     const navRefs = [ useRef(null), useRef(null), useRef(null) ]
 
     return (
-        <Layout>
+        <>
             <SEO title="Home" keywords={[`lucas lombardo`, `blog`,
                 `react`, `web developer`, `javascript`, `jamstack`,
                 `gatsby`, `boston`, `coding`]} />
@@ -28,7 +27,7 @@ const IndexPage = () => {
             <div ref={navRefs[2]} id="contact">
                 <Contact />
             </div>
-        </Layout>
+        </>
     )
 }
 

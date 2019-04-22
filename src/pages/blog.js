@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import SEO from "../components/shared/seo"
-import Layout from "../components/shared/layout"
 import Nav from "../components/shared/nav"
 import SectionHeader from "../components/styles/sectionHeader"
 import { colors } from "../components/styles/lib"
@@ -22,7 +21,7 @@ const BlogWrapper = styled.main`
 
 const BlogPage = () => {
     return (
-        <Layout>
+        <>
             <SEO title="Blog" keywords={[`lucas lombardo`, `blog`,
                 `react`, `web development`, `javascript`, `jamstack`,
                 `gatsby`, `developer`, `boston`, `coding`]}
@@ -34,7 +33,7 @@ const BlogPage = () => {
                 </SectionHeader>
                 <BlogList />
             </BlogWrapper>
-        </Layout>
+        </>
     )
 }
 

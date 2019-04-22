@@ -7,7 +7,6 @@ import Prism from "prismjs"
 
 import SectionHeader from "../components/styles/sectionHeader"
 import Container from "../components/styles/container"
-import Layout from "../components/shared/layout"
 import Comments from "../components/blog/comments"
 import SEO from "../components/shared/seo"
 import Nav from "../components/shared/nav"
@@ -108,7 +107,7 @@ class PostTemplate extends Component {
         const post = this.props.data.wordpressPost
         const seoTags = post.acf.seo_tags.map(obj => obj.tag)
         return (
-            <Layout>
+            <>
                 <SEO
                     title={post.title}
                     keywords={[
@@ -144,7 +143,7 @@ class PostTemplate extends Component {
                     </Container>
                     <Comments slug={post.slug} />
                 </Post>
-            </Layout>
+            </>
         )
     }
 }
