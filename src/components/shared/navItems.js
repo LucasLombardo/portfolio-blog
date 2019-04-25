@@ -47,7 +47,7 @@ const NavItems = ({ activeSection, isHome, isSticky }) => {
                 Lucas Lombardo
             </Link>
             <div className="sidebar" onClick={handleSidebarClick} >
-                <button onClick={toggleNav} className="hamburger toggle">
+                <button type="button" onClick={toggleNav} className="hamburger toggle">
                     <Hamburger isOpen={open} />
                 </button>
                 <ul>
