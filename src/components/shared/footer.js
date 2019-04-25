@@ -58,6 +58,7 @@ const ScFooter = styled.footer`
 const Footer = () => (
     <ScFooter>
         <a
+            name="github"
             href="https://github.com/lucaslombardo"
             target="_blank"
             rel="noopener noreferrer"
@@ -66,6 +67,7 @@ const Footer = () => (
         </a>
 
         <a
+            name="codepen"
             href="https://codepen.io/LucasLombardo/"
             target="_blank"
             rel="noopener noreferrer"
@@ -74,6 +76,7 @@ const Footer = () => (
         </a>
 
         <a
+            name="linked in"
             href="https://www.linkedin.com/in/lombardol/"
             target="_blank"
             rel="noopener noreferrer"
@@ -83,6 +86,7 @@ const Footer = () => (
 
         <div className="email">
             <a
+                name="email"
                 href={`mailto:lucasalombardo@gmail.com`}
             >
                 <FontAwesomeIcon icon={faEnvelope} />
