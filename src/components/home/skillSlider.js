@@ -79,43 +79,43 @@ const SkillSlider = () => {
                 infinite
             >
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-node.svg" />
+                    <img alt="Node JS Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-node.svg" />
                     <p>Node JS</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-html.svg" />
+                    <img alt="HTML5 Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-html.svg" />
                     <p>HTML5</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-sass.svg" />
+                    <img alt="Sass Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-sass.svg" />
                     <p>Sass</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-jsx.svg" />
+                    <img alt="ReactJS" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-jsx.svg" />
                     <p>ReactJS</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-css.svg" />
+                    <img alt="CSS3 Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-css.svg" />
                     <p>CSS3</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-git.svg" />
+                    <img alt="Git Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-git.svg" />
                     <p>Git</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-javascript.svg" />
+                    <img alt="JavaScript Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-javascript.svg" />
                     <p>JavaScript</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-gatsby.svg" />
+                    <img alt="Gatsby JS Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-gatsby.svg" />
                     <p>Gatsby JS</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-mongo.svg" />
+                    <img alt="Mongo DB Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-mongo.svg" />
                     <p>MongoDB</p>
                 </div>
                 <div className="skill-icon">
-                    <img src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-photoshop.svg" />
+                    <img alt="Photoshop Logo" src="https://res.cloudinary.com/lucasl/image/upload/v1553618857/Dev%20Icons/icon-photoshop.svg" />
                     <p>Photoshop</p>
                 </div>
             </Carousel>

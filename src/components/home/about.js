@@ -43,6 +43,7 @@ const About = () => {
             <Container>
                 <AboutCard
                     image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec1.jpg"
+                    alt="Me sitting at the edge of the grand canyon"
                 >
                     <h3>Self Driven developer with a passion for learning</h3>
                     <p>
@@ -61,6 +62,7 @@ const About = () => {
 
                 <AboutCard
                     image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec2.jpg"
+                    alt="Macbook with code on the screen"
                     right
                 >
                     <h3>Currently seeking employment in the Boston Area</h3>
