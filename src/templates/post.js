@@ -38,8 +38,11 @@ export const Post = styled.main`
         background: ${ colors.white };
 
         img {
-            border-radius: 4px 4px 0 0;
+            border-radius: 4px;
             max-width: 100%;
+        }
+        .full-width {
+            width: 100%;
         }
 
         .post-content a {

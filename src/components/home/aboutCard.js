@@ -127,7 +127,7 @@ const ScAboutCard = styled.article`
     }
 `
 
-const AboutCard = ({ image, children, right }) => {
+const AboutCard = ({ image, children, right, alt }) => {
     return (
         <ScrollAnimation
             animateIn={right ? `rotate-in-right` : `rotate-in-left`}
@@ -136,7 +136,7 @@ const AboutCard = ({ image, children, right }) => {
         >
             <ScAboutCard className={right ? `right` : `left`}>
                 <div className="image-wrapper">
-                    <img src={image} />
+                    <img alt={alt} src={image} />
                 </div>
                 <div className="content">
                     {children}

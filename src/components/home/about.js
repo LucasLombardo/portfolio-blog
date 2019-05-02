@@ -43,14 +43,16 @@ const About = () => {
             <Container>
                 <AboutCard
                     image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec1.jpg"
+                    alt="Me sitting at the edge of the grand canyon"
                 >
                     <h3>Self Driven developer with a passion for learning</h3>
                     <p>
                         I'm a web developer mainly focused on full stack JavaScript development.
-                        Some of my favorite things to work with are React, Node, and Gatsby. One
+                        Some of my favorite things to work with are React, CSS/SaSS, and GatsbyJS. One
                         of the main things that lead me to web development was my love for learning new
-                        things. I'm currently in a full time coding bootcamp with General Assembly where
-                        I'm focused on improving my skills in GraphQL and Express.
+                        things. I just graduaded from a full time coding bootcamp with General Assembly where
+                        I worked with industry leading technologies including ExpressJS, MongoDB, PostgreSQL,
+                        ReactJS and GraphQL to name a few.
                     </p>
                     <p>
                         When I’m not working towards making the web a better place, you can find me
@@ -61,6 +63,7 @@ const About = () => {
 
                 <AboutCard
                     image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec2.jpg"
+                    alt="Macbook with code on the screen"
                     right
                 >
                     <h3>Currently seeking employment in the Boston Area</h3>
