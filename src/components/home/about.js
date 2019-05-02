@@ -72,7 +72,7 @@ const About = () => {
                     <a
                         className="button primary"
                         // eslint-disable-next-line
-                        href="https://res.cloudinary.com/lucasl/image/upload/v1553562345/Resume_Lucas_Lombardo.pdf"
+                        href="https://res.cloudinary.com/dov1pamgz/image/upload/v1556806618/Resume_Lucas_Lombardo.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
