@@ -47,12 +47,9 @@ const About = () => {
                 >
                     <h3>Self Driven developer with a passion for learning</h3>
                     <p>
-                        I'm a web developer mainly focused on full stack JavaScript development.
-                        Some of my favorite things to work with are React, CSS/SaSS, and GatsbyJS. One
-                        of the main things that lead me to web development was my love for learning new
-                        things. I just graduaded from a full time coding bootcamp with General Assembly where
-                        I worked with industry leading technologies including ExpressJS, MongoDB, PostgreSQL,
-                        ReactJS and GraphQL to name a few.
+                        I'm a software engineer mainly focused on full stack JavaScript development.
+                        Some of my favorite things to work with are React, Styled Components, and
+                        GatsbyJS. I'm currently excited about the JAMstack architecture and GraphQL.
                     </p>
                     <p>
                         When I’m not working towards making the web a better place, you can find me
@@ -61,7 +58,7 @@ const About = () => {
                     </p>
                 </AboutCard>
 
-                <AboutCard
+                {/* <AboutCard
                     image="https://res.cloudinary.com/dov1pamgz/image/upload/v1547322364/sec2.jpg"
                     alt="Macbook with code on the screen"
                     right
@@ -89,7 +86,7 @@ const About = () => {
                         Portfolio
                         <FontAwesomeIcon icon={faArrowDown} />
                     </a>
-                </AboutCard>
+                </AboutCard> */}
             </Container>
         </AboutWrapper>
     )
